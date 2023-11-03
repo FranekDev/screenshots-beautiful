@@ -13,7 +13,7 @@
     <title>Screenshots Beautiful</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body {{ $attributes(['class' => 'w-screen h-screen font-inter']) }}>
+<body {{ $attributes(['class' => 'w-screen h-screen font-inter selection:bg-green-300 selection:text-neutral-900']) }}>
 
     {{ $slot }}
 
