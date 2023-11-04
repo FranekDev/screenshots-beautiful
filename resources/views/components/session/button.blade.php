@@ -1,6 +1,7 @@
 @props(['href'])
 
-<a href="{{ $href }}" {{ $attributes->merge(['class' => 'px-4 py-2 flex justify-center items-center z-50
+<a
+    href="{{ $href }}" {{ $attributes->merge(['class' => 'px-4 py-2 flex justify-center items-center z-50
 relative before:absolute
 before:border-2  before:w-full before:h-full  before:-z-10
  after:z-10  after:pt-1.5

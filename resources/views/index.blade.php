@@ -1,12 +1,20 @@
 <x-layout class="bg-gradient-to-bl from-green-400 to-emerald-400 ">
+    <x-flash-message class="bg-neutral-900 text-neutral-300"/>
+
     <main class="flex flex-col justify-between items-center">
         <x-header>
-            <x-session.link href="/register" class="after:content-['Register'] after:bg-green-400 before:border-black after:border-black">
-                Register
-            </x-session.link>
-            <x-session.link href="/login" class="after:content-['Log_In'] after:bg-green-400 before:border-black after:border-black">
-                Log In
-            </x-session.link>
+            @auth
+                <x-session.link href="/logout" class="after:content-['Log_Out'] after:bg-green-400 before:border-black after:border-black">
+                    Log Out
+                </x-session.link>
+            @else
+                <x-session.link href="/register" class="after:content-['Register'] after:bg-green-400 before:border-black after:border-black">
+                    Register
+                </x-session.link>
+                <x-session.link href="/login" class="after:content-['Log_In'] after:bg-green-400 before:border-black after:border-black">
+                    Log In
+                </x-session.link>
+            @endauth
         </x-header>
 
         <section class="w-full flex justify-between fixed my-auto inset-0 h-fit">
@@ -23,12 +31,12 @@
                 </div>
 
                 <div class="border-2 border-black p-10">
-                    <div class="rounded-xl max-w-[450px] max-h-[200px] shadow-xl overflow-hidden">
-                        <img
-                            src="/img/preview.png"
-                            alt="Preview"
-                            class="w-full h-full aspect-video"
-                        >
+                    <div class="rounded-xl w-[450px] h-[200px] shadow-xl overflow-hidden bg-zinc-800">
+{{--                        <img--}}
+{{--                            src="/img/preview.png"--}}
+{{--                            alt="Preview"--}}
+{{--                            class="w-full h-full aspect-video"--}}
+{{--                        >--}}
                     </div>
                 </div>
             </div>

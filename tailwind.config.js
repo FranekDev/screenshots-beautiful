@@ -19,16 +19,25 @@ export default {
                 inter: ['Inter', ...defaultTheme.fontFamily.sans],
             },
             animation: {
-                'slide-in': 'slide-in .05s linear forwards'
+                'slide-in': 'slide-in .05s linear forwards',
+                'slide-down': 'slide-down .3s linear forwards',
+                'slide-up': 'slide-up .3s linear forwards'
             },
             keyframes: {
-              'slide-in': {
-                  'from': { 'margin-bottom': '12px', 'margin-left': '12px'},
-                    'to': { 'margin-bottom': '0px', 'margin-left': '0px'}
-              }
+                'slide-in': {
+                    'from': {'margin-bottom': '12px', 'margin-left': '12px'},
+                    'to': {'margin-bottom': '0px', 'margin-left': '0px'}
+                },
+                'slide-down': {
+                    'from': {'margin-top': '-20px'},
+                    'to': {'margin-top': '8px'}
+                },
+                'slide-up': {
+                    'from': {'margin-top': '8px'},
+                    'to': {'margin-top': '-40px'}
+                }
             },
-            colors: {
-            },
+            colors: {},
             backgroundImage: {
                 'dots': "url('/public/img/dots.svg')",
             }
