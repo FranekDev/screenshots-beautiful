@@ -4,7 +4,7 @@
 relative before:absolute
 before:border-2  before:w-full before:h-full  before:-z-10
  after:z-10
-after:border-2   after:w-full after:h-full after:absolute after:mb-3 after:ml-3 hover:after:animate-slide-in
+after:border-2   after:w-full after:h-full after:absolute  hover:after:animate-slide-in after:animate-slide-out
 after:flex after:justify-center after:items-center after:content-center
 ']) }}>
     {{ $slot }}

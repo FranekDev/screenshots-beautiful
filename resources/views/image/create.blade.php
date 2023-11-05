@@ -1,4 +1,7 @@
 <x-layout class="bg-neutral-900">
+{{--    <p class="text-white">{{ dd($image) }}</p>--}}
+    <x-flash-message class="bg-green-400 text-neutral-900"/>
+
     <main class="flex flex-col justify-between items-center">
         <x-header>
             @auth
@@ -24,9 +27,9 @@
             @endauth
         </x-header>
 
-        <x-pages-nav.links/>
 
-        <div class="w-full h-full flex justify-start items-start">
+        <div class="w-full h-full flex justify-between items-start">
+        <x-pages-nav.links/>
             <div class="mx-32 w-full flex flex-col justify-start items-start gap-10 bg-dots bg-no-repeat bg-left-top pt-10 mt-8">
                 <div class="space-y-4 w-full pl-8">
                     <h1 class="text-green-300 font-krona text-3xl">Create</h1>
@@ -35,13 +38,14 @@
                     </p>
                 </div>
 
-                <div class="w-full">
+                <div class="w-full flex justify-between items-end">
+
                     <div class="w-full h-auto flex flex-col items-center justify-center mx-auto">
                         <form
-                            action="/create"
+                            action="/image/store"
                             method="POST"
                             enctype="multipart/form-data"
-                            class="flex flex-col items-center justify-center gap-10"
+                            class="flex flex-col items-center justify-center gap-10 "
                         >
                             @csrf
 
@@ -54,14 +58,21 @@
                                 />
                             </div>
                             <div>
-                                <x-button class="after:content-['upload_image'] after:bg-green-400 after:text-neutral-900 before:border-green-400 after:border-green-400 after:text-xl text-xl">
+                                <x-button type="submit" class="after:content-['upload_image'] after:bg-green-400 after:text-neutral-900 before:border-green-400 after:border-green-400 after:text-xl text-xl">
                                     upload image
                                 </x-button>
                             </div>
                         </form>
                     </div>
+
+
                 </div>
             </div>
+                    <div class="text-white border-2 border-green-400 h-full w-fit flex justify-center items-center bg-slate-700">
+                        <div>
+                            dsflk
+                        </div>
+                    </div>
         </div>
     </main>
 </x-layout>

@@ -1,4 +1,5 @@
 <x-layout class="bg-gradient-to-bl from-green-400 to-emerald-400 ">
+
     <x-flash-message class="bg-neutral-900 text-neutral-300"/>
 
     <main class="flex flex-col justify-between items-center">

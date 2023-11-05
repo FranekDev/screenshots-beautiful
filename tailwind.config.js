@@ -1,7 +1,6 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
 
-
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -20,16 +19,21 @@ export default {
             },
             animation: {
                 'slide-in': 'slide-in .05s linear forwards',
-                'slide-down': 'slide-down .3s linear forwards',
-                'slide-up': 'slide-up .3s linear forwards'
+                'slide-out': 'slide-out .05s linear forwards',
+                'slide-down': 'slide-down .15s ease-in-out',
+                'slide-up': 'slide-up .15s ease-in-out forwards'
             },
             keyframes: {
                 'slide-in': {
                     'from': {'margin-bottom': '12px', 'margin-left': '12px'},
                     'to': {'margin-bottom': '0px', 'margin-left': '0px'}
                 },
+                'slide-out': {
+                    'from': {'margin-bottom': '0px', 'margin-left': '0px'},
+                    'to': {'margin-bottom': '12px', 'margin-left': '12px'}
+                },
                 'slide-down': {
-                    'from': {'margin-top': '-20px'},
+                    'from': {'margin-top': '-40px'},
                     'to': {'margin-top': '8px'}
                 },
                 'slide-up': {
