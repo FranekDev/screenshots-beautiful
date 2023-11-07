@@ -28,7 +28,7 @@
         </x-header>
 
 
-            <x-pages-nav.links/>
+        <x-pages-nav.links/>
         <div class="w-full h-full flex pl-32 gap-5">
             <div class="w-full flex flex-col justify-start items-start gap-10 bg-dots bg-no-repeat bg-left-top pt-10 mt-8">
                 <div class="space-y-4 w-full pl-8">
@@ -37,31 +37,28 @@
 
                 <div class="w-full flex justify-between items-end">
 
-                    <div class="w-full h-auto flex flex-col items-center justify-center mx-auto">
-                        <form
-                            action="/image/store"
-                            method="POST"
-                            enctype="multipart/form-data"
-                            class="flex flex-col items-center justify-center gap-10 "
-                        >
-                            @csrf
+                    <div class="w-full h-auto flex flex-col items-center justify-center mx-auto gap-10">
+                        <div
+                            class="border-4 border-green-400 w-[600px] h-[350px] flex items-center justify-center"
 
-                            <div class="border-4 border-green-400 w-[600px] h-[350px] flex items-center justify-center p-10" id="image-container">
+                        >
+                            <div class="w-full h-full flex items-center justify-center p-10" id="image-container">
                                 <img
                                     src="/storage/{{ $image->name }}"
                                     alt="Image"
                                     class="w-auto h-full rounded-xl shadow-xl"
                                 >
                             </div>
-                            <div>
-                                <x-button
-                                    type="submit"
-                                    class="after:content-['download_image'] after:bg-green-400 after:text-neutral-900 before:border-green-400 after:border-green-400 after:text-xl text-xl"
-                                >
-                                    download image
-                                </x-button>
-                            </div>
-                        </form>
+                        </div>
+                        <div>
+                            <x-button
+                                type="submit"
+                                class="after:content-['download_image'] after:bg-green-400 after:text-neutral-900 before:border-green-400 after:border-green-400 after:text-xl text-xl"
+                                id="download-image"
+                            >
+                                download image
+                            </x-button>
+                        </div>
                     </div>
 
 

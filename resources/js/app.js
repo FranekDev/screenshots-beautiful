@@ -1,5 +1,7 @@
 import './bootstrap';
 import './main';
+import './screenshot';
+import './colors';
 
 import Alpine from 'alpinejs';
 
