@@ -43,4 +43,10 @@
             </div>
         </section>
     </main>
+
+    <input
+        type="hidden"
+        name=""
+        class="animate-slide-up"
+    >
 </x-layout>
