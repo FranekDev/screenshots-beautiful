@@ -31,9 +31,7 @@
         <x-pages-nav.links/>
         <div class="w-full h-full flex pl-32 gap-5">
             <div class="w-full flex flex-col justify-start items-start gap-10 bg-dots bg-no-repeat bg-left-top pt-10 mt-8">
-                <div class="space-y-4 w-full pl-8">
-                    <h1 class="text-green-300 font-krona text-3xl">Create</h1>
-                </div>
+                <x-title>Create</x-title>
 
                 <div class="w-full flex justify-between items-end">
 
@@ -42,7 +40,10 @@
                             class="border-4 border-green-400 w-[600px] h-[350px] flex items-center justify-center"
 
                         >
-                            <div class="w-full h-full flex items-center justify-center p-10" id="image-container">
+                            <div
+                                class="w-full h-full flex items-center justify-center p-10"
+                                id="image-container"
+                            >
                                 <img
                                     src="/storage/{{ $image->name }}"
                                     alt="Image"
@@ -64,85 +65,31 @@
 
                 </div>
             </div>
-            <div class="text-white h-fit w-full flex justify-center mt-36">
+            <div class="h-fit w-full flex justify-center mt-36">
+
                 <div class="border-4 border-green-400 flex flex-col justify-center items-center h-fit w-auto">
+
                     <div class="flex flex-col gap-3 w-auto items-start px-4 py-6">
                         <p class="text-green-300">Backgrounds</p>
-                        <div class="grid grid-cols-3 w-auto gap-3 [&>div]:cursor-pointer">
-                            <div class="w-[65px] h-[65px] bg-gradient-to-br from-blue-500 to-sky-300 rounded-full color-preview">
-                                <input
-                                    type="hidden"
-                                    name=""
-                                    value="bg-gradient-to-br from-blue-500 to-sky-300"
-                                >
-                            </div>
-                            <div class="w-[65px] h-[65px] bg-gradient-to-br from-orange-200 to-orange-500 rounded-full color-preview">
-                                <input
-                                    type="hidden"
-                                    name=""
-                                    value="bg-gradient-to-br from-orange-200 to-orange-500"
-                                >
-                            </div>
-                            <div class="w-[65px] h-[65px] bg-gradient-to-br from-purple-600 to-indigo-400 rounded-full color-preview">
-                                <input
-                                    type="hidden"
-                                    name=""
-                                    value="bg-gradient-to-br from-purple-600 to-indigo-400"
-                                >
-                            </div>
-                            <div class="w-[65px] h-[65px] bg-green-400 rounded-full color-preview">
-                                <input
-                                    type="hidden"
-                                    name=""
-                                    value="bg-green-400"
-                                >
-                            </div>
-                            <div class="w-[65px] h-[65px] bg-neutral-900 rounded-full color-preview border-4 border-green-400">
-                                <input
-                                    type="hidden"
-                                    name=""
-                                    value="bg-neutral-900"
-                                >
-                            </div>
-                            <div class="w-[65px] h-[65px] bg-teal-300 rounded-full color-preview">
-                                <input
-                                    type="hidden"
-                                    name=""
-                                    value="bg-teal-300"
-                                >
-                            </div>
-                            <div class="w-[65px] h-[65px] bg-gradient-to-br from-neutral-900 to-neutral-700 rounded-full color-preview">
-                                <input
-                                    type="hidden"
-                                    name=""
-                                    value="bg-gradient-to-br from-neutral-900 to-neutral-700"
-                                >
-                            </div>
-                            <div class="w-[65px] h-[65px] bg-gradient-to-br from-gray-200 to-neutral-400 rounded-full color-preview">
-                                <input
-                                    type="hidden"
-                                    name=""
-                                    value="bg-gradient-to-br from-gray-200 to-neutral-400"
-                                >
-                            </div>
-                            <div class="w-[65px] h-[65px] bg-gradient-to-br from-teal-300 to-yellow-200 rounded-full color-preview">
-                                <input
-                                    type="hidden"
-                                    name=""
-                                    value="bg-gradient-to-br from-teal-300 to-yellow-200"
-                                >
-                            </div>
-                        </div>
+                        <x-colors/>
                     </div>
+
                     <div class="flex flex-col gap-3 items-start px-4 py-6 w-full">
                         <p class="text-green-300">Rounded</p>
-                        <input
-                            type="checkbox"
-                            name=""
-                            id=""
-                        >
+
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input
+                                type="checkbox"
+                                value=""
+                                class="sr-only peer"
+                            >
+                            <div class="w-11 h-6 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-green-300 dark:peer-focus:ring-green-400 rounded-full peer dark:bg-neutral-950 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-neutral-900 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-400"></div>
+                        </label>
+
                     </div>
+
                 </div>
+
             </div>
         </div>
     </main>

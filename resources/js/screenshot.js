@@ -19,7 +19,10 @@ const downloadScreenshot = (screenshot) => {
 
 const captureScreenshot = () => {
 
-    html2canvas(imageContainer).then(canvas => {
+    html2canvas(imageContainer, {
+        scale: 4,
+        useCORS: true,
+    }).then(canvas => {
 
         const screenshot = canvas.toDataURL('image/png');
 

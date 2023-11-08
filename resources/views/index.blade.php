@@ -44,9 +44,9 @@
         </section>
     </main>
 
-    <input
-        type="hidden"
-        name=""
-        class="animate-slide-up"
-    >
+{{--    <input--}}
+{{--        type="hidden"--}}
+{{--        name=""--}}
+{{--        class="animate-slide-up border-emerald-400"--}}
+{{--    >--}}
 </x-layout>
