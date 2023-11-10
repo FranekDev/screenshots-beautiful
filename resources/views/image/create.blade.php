@@ -51,26 +51,26 @@
                 <div class="w-full flex justify-between items-end">
 
                     <div class="w-full h-auto flex flex-col items-center justify-center mx-auto">
-                        @if (Session::has('image'))
-                            <div
-                                class="border-4 border-green-500 w-[600px] h-[350px] flex items-center justify-center"
-
-                            >
-                                <div
-                                    class="w-full h-full flex items-center justify-center p-10"
-                                    id="image-container"
-                                >
-                                    <img
-                                        src="/storage/{{ Session::get('image')->name }}"
-                                        alt="Image"
-                                        class="w-auto h-full rounded-xl shadow-xl transition-all"
-                                        id="image-preview"
-                                    >
-                                </div>
-                            </div>
-                        @else
+{{--                        @if (Session::has('image'))--}}
+{{--                            <div--}}
+{{--                                class="border-4 border-green-500 w-[600px] h-[350px] flex items-center justify-center"--}}
+{{----}}
+{{--                            >--}}
+{{--                                <div--}}
+{{--                                    class="w-full h-full flex items-center justify-center p-10"--}}
+{{--                                    id="image-container"--}}
+{{--                                >--}}
+{{--                                    <img--}}
+{{--                                        src="/storage/{{ Session::get('image')->name }}"--}}
+{{--                                        alt="Image"--}}
+{{--                                        class="w-auto h-full rounded-xl shadow-xl transition-all"--}}
+{{--                                        id="image-preview"--}}
+{{--                                    >--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        @else--}}
                             <x-form.upload-image/>
-                        @endif
+{{--                        @endif--}}
                     </div>
 
 

@@ -24,8 +24,8 @@ class ImageController extends Controller
         Session::put('image', $image);
 
 //        return redirect()->route('/create', ['image' => $image])->with('success', 'Image uploaded');
-//        return redirect("/image/show/{$image->id}")->with('success', 'Image uploaded');
-        return redirect()->back()->with('success', 'Image uploaded');
+        return redirect("/image/show/{$image->id}")->with('success', 'Image uploaded');
+//        return redirect()->back()->with('success', 'Image uploaded');
 //        return view('image.show', [
 //            'image' => $image
 //        ]);
