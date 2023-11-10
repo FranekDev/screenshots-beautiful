@@ -49,4 +49,4 @@ Route::get('/logout', [SessionController::class, 'destroy']);
 
 // Image
 Route::post('/image/store', [ImageController::class, 'store'])->middleware('auth');
-Route::get('/image/show/{image}', [ImageController::class, 'show'])->middleware('auth');
+Route::get('/image/show/{image}', [ImageController::class, 'show'])->middleware('auth')->name('image.show');

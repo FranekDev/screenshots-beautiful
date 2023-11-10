@@ -21,19 +21,17 @@ class ImageController extends Controller
             'name' => Storage::disk('public')->put('usersImages', request()->file('image'))
         ]);
 
+        Session::put('image', $image);
+
 //        return redirect()->route('/create', ['image' => $image])->with('success', 'Image uploaded');
-        return redirect("/image/show/{$image->id}")->with('success', 'Image uploaded');
+//        return redirect("/image/show/{$image->id}")->with('success', 'Image uploaded');
+        return redirect()->back()->with('success', 'Image uploaded');
 //        return view('image.show', [
 //            'image' => $image
 //        ]);
     }
 
     public function delete()
-    {
-        //
-    }
-
-    public function update()
     {
         //
     }

@@ -37,7 +37,7 @@
 
                     <div class="w-full h-auto flex flex-col items-center justify-center mx-auto gap-10">
                         <div
-                            class="border-4 border-green-400 w-[600px] h-[350px] flex items-center justify-center"
+                            class="border-4 border-green-500 w-[600px] h-[350px] flex items-center justify-center"
 
                         >
                             <div
@@ -47,7 +47,8 @@
                                 <img
                                     src="/storage/{{ $image->name }}"
                                     alt="Image"
-                                    class="w-auto h-full rounded-xl shadow-xl"
+                                    class="w-auto h-full rounded-xl shadow-xl transition-all"
+                                    id="image-preview"
                                 >
                             </div>
                         </div>
@@ -82,6 +83,8 @@
                                 type="checkbox"
                                 value=""
                                 class="sr-only peer"
+                                id="rounded-corners"
+                                checked
                             >
                             <div class="w-11 h-6 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-green-300 dark:peer-focus:ring-green-400 rounded-full peer dark:bg-neutral-950 peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-neutral-900 after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-400"></div>
                         </label>

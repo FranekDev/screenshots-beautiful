@@ -18,3 +18,18 @@ if (uploadImageContainer) {
         inputFile.click();
     });
 }
+
+const roundedCornersToggle = document.querySelector('#rounded-corners');
+const imageContainer = document.querySelector('#image-preview');
+roundedCornersToggle.addEventListener('change', () => {
+    console.log(roundedCornersToggle.checked);
+    if (roundedCornersToggle.checked && !imageContainer.classList.contains('rounded-xl')) {
+        imageContainer.classList.add('rounded-xl');
+    } else {
+        imageContainer.classList.remove('rounded-xl');
+    }
+});
+
+window.addEventListener('load', () => {
+    roundedCornersToggle.checked = true;
+});

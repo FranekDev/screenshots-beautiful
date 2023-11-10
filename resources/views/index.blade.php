@@ -1,18 +1,26 @@
 <x-layout class="bg-gradient-to-bl from-green-400 to-emerald-400 ">
-
     <x-flash-message class="bg-neutral-900 text-neutral-300"/>
 
     <main class="flex flex-col justify-between items-center">
         <x-header>
             @auth
-                <x-session.link href="/logout" class="after:content-['Log_Out'] after:bg-green-400 before:border-black after:border-black">
+                <x-session.link
+                    href="/logout"
+                    class="after:content-['Log_Out'] after:bg-green-400 before:border-black after:border-black"
+                >
                     Log Out
                 </x-session.link>
             @else
-                <x-session.link href="/register" class="after:content-['Register'] after:bg-green-400 before:border-black after:border-black">
+                <x-session.link
+                    href="/register"
+                    class="after:content-['Register'] after:bg-green-400 before:border-black after:border-black"
+                >
                     Register
                 </x-session.link>
-                <x-session.link href="/login" class="after:content-['Log_In'] after:bg-green-400 before:border-black after:border-black">
+                <x-session.link
+                    href="/login"
+                    class="after:content-['Log_In'] after:bg-green-400 before:border-black after:border-black"
+                >
                     Log In
                 </x-session.link>
             @endauth
@@ -28,25 +36,22 @@
             <div class="w-full flex justify-around mx-5 items-center ">
                 <div class="space-y-4">
                     <h1 class="font-krona text-4xl md:text-6xl">screenshots<br>beautiful</h1>
-                    <x-button class="after:content-['Get_Started'] after:bg-black after:text-emerald-400 before:border-black after:border-black">Get Started</x-button>
+                    <x-button class="after:content-['Get_Started'] after:bg-black after:text-emerald-400 before:border-black after:border-black">
+                        Get Started
+                    </x-button>
                 </div>
 
                 <div class="border-2 border-black p-10">
                     <div class="rounded-xl w-[450px] h-[200px] shadow-xl overflow-hidden bg-zinc-800">
-{{--                        <img--}}
-{{--                            src="/img/preview.png"--}}
-{{--                            alt="Preview"--}}
-{{--                            class="w-full h-full aspect-video"--}}
-{{--                        >--}}
+                        {{--                        <img--}}
+                        {{--                            src="/img/preview.png"--}}
+                        {{--                            alt="Preview"--}}
+                        {{--                            class="w-full h-full aspect-video"--}}
+                        {{--                        >--}}
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-{{--    <input--}}
-{{--        type="hidden"--}}
-{{--        name=""--}}
-{{--        class="animate-slide-up border-emerald-400"--}}
-{{--    >--}}
 </x-layout>
