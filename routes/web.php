@@ -45,7 +45,7 @@ Route::get('/create', [CreateController::class, 'index'])->name('/create');
 Route::get('/admin', [AdminController::class, 'index']);
 
 // Session
-Route::get('/logout', [SessionController::class, 'destroy']);
+Route::get('/logout', [SessionController::class, 'destroy'])->middleware('auth');
 
 // Image
 Route::post('/image/store', [ImageController::class, 'store'])->middleware('auth');
