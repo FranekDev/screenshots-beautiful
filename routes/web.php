@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AdminImagesController;
 use App\Http\Controllers\CreateController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
@@ -43,6 +44,7 @@ Route::get('/create', [CreateController::class, 'index'])->name('/create');
 
 // Admin
 Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin/images', [AdminImagesController::class, 'index']);
 
 // Session
 Route::get('/logout', [SessionController::class, 'destroy'])->middleware('auth');

@@ -27,6 +27,16 @@
         <div class="w-full h-full p-10">
             <div class="flex justify-start items-start border-4 border-green-400 mx-12 w-auto h-full bg-dots bg-no-repeat bg-left-top">
                 <x-admin.nav/>
+
+                <div class="w-full h-full p-14 grid grid-cols-3 gap-10">
+{{--                    <div class="bg-amber-200 w-full h-full"></div>--}}
+                    <x-admin.summary title="Total users">
+                        {{ $users }}
+                    </x-admin.summary>
+                    <x-admin.summary title="Total images">
+                        {{ $images }}
+                    </x-admin.summary>
+                </div>
             </div>
         </div>
     </main>
