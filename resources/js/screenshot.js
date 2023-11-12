@@ -19,15 +19,19 @@ const downloadScreenshot = (screenshot) => {
 
 const captureScreenshot = () => {
 
-    html2canvas(imageContainer, {
-        scale: 4,
-        useCORS: true,
-    }).then(canvas => {
+    if (imageContainer) {
+        html2canvas(imageContainer, {
+            scale: 4,
+            useCORS: true,
+        }).then(canvas => {
 
-        const screenshot = canvas.toDataURL('image/png');
+            const screenshot = canvas.toDataURL('image/png');
 
-        downloadScreenshot(screenshot);
-    });
+            downloadScreenshot(screenshot);
+        });
+    }
 };
 
-downloadButton.addEventListener('click', captureScreenshot);
+if (downloadButton) {
+    downloadButton.addEventListener('click', captureScreenshot);
+}

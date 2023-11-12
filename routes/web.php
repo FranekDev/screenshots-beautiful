@@ -43,6 +43,8 @@ Route::get('/about', [AboutController::class, 'index'])->name('/about');
 Route::get('/create', [CreateController::class, 'index'])->name('/create');
 
 // Admin
+// TODO
+// - Add Admin middleware
 Route::get('/admin', [AdminController::class, 'index']);
 Route::get('/admin/images', [AdminImagesController::class, 'index']);
 

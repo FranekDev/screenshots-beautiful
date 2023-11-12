@@ -1,7 +1,4 @@
 <x-layout class="bg-neutral-900">
-
-    <x-flash-message class="bg-green-300 text-neutral-900"/>
-
     <main class="flex flex-col justify-between items-center w-screen h-screen">
         <x-header>
             @auth
@@ -31,15 +28,11 @@
             <div class="flex justify-start items-start border-4 border-green-400 mx-12 w-auto h-full bg-dots bg-no-repeat bg-left-top">
                 <x-admin.nav/>
 
-                <div class="w-full h-full p-14">
-                    <div class="grid grid-cols-2 gap-10 w-fit">
-                        <x-admin.progress-bar title="Taken space - " size="{{ $imagesSize }}" maxSize="{{ $maxImagesSize }}" />
-                        <x-admin.summary title="Total users">
-                            {{ $users }}
-                        </x-admin.summary>
-                        <x-admin.summary title="Total images">
-                            {{ $images }}
-                        </x-admin.summary>
+                <div class="w-full h-full overflow-y-scroll">
+                    <div class="w-full h-fit">
+                        @foreach($images as $image)
+                            <p class="text-green-300 text-xl">{{ $image->owner->name }}</p>
+                        @endforeach
                     </div>
                 </div>
             </div>

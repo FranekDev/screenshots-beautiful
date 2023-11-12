@@ -1,8 +1,9 @@
 import './bootstrap';
 import './main';
 import './imageContainer';
-import './screenshot';
+import './progress';
 import './colors';
+import './screenshot';
 
 import Alpine from 'alpinejs';
 
