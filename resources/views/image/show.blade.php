@@ -37,17 +37,17 @@
 
                     <div class="w-full h-auto flex flex-col items-center justify-center mx-auto gap-10">
                         <div
-                            class="border-4 border-green-500 w-[600px] h-[350px] flex items-center justify-center"
+                            class="border-4 border-green-500 w-fit h-fit flex items-center justify-center"
 
                         >
                             <div
-                                class="w-full h-full flex items-center justify-center p-10"
+                                class="w-fit h-full flex items-center justify-center p-10"
                                 id="image-container"
                             >
                                 <img
                                     src="/storage/{{ $image->name }}"
                                     alt="Image"
-                                    class="w-auto h-full rounded-xl shadow-xl transition-all"
+                                    class="w-auto h-full rounded-xl shadow-xl transition-all object-contain"
                                     id="image-preview"
                                 >
                             </div>

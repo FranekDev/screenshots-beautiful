@@ -44,7 +44,7 @@
                 <div class="space-y-4 w-full pl-8">
                     <h1 class="text-green-300 font-krona text-3xl">Create</h1>
                     <p class="text-zinc-100 text-xl">
-                        Upload image to get started, {{ Session::get('image')->name ?? "" }}.
+                        Upload image to get started.
                     </p>
                 </div>
 
