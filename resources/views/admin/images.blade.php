@@ -34,37 +34,38 @@
                 <div class="w-full h-full overflow-y-scroll relative">
                     <div class="w-full h-fit absolute">
                         @if (isset($images))
-                            <table class="w-full h-full">
-                                <thead class="w-full bg-neutral-900">
-                                <tr class="text-green-300 text-xl flex justify-between p-4 w-full px-8">
-                                    <th class="bg-amber-200 w-auto">Lp.</th>
-                                    <th class="bg-lime-300 w-auto">Image</th>
-                                    <th class="bg-slate-100 w-auto">Owner</th>
-                                    <th class="bg-amber-600 w-auto">Email</th>
-                                    <th class="bg-green-400 w-auto">Uploaded at</th>
-                                    <th class="bg-yellow-100 w-auto">Size</th>
-                                    <th></th>
+                            <table class="w-full h-full ">
+                                <thead class="bg-neutral-900">
+                                <tr class="text-green-300 text-xl">
+                                    <td class="py-2 pl-4">Lp.</td>
+                                    <td>Image</td>
+                                    <td>Owner</td>
+                                    <td>Email</td>
+                                    <td>Uploaded at</td>
+                                    <td>Size</td>
+                                    <td class="pr-4"></td>
                                 </tr>
                                 </thead>
+
                                 <tbody class="text-neutral-300">
                                 @foreach($images as $image)
-                                    <tr class="{{ $loop->odd ? 'bg-neutral-950' : 'bg-neutral-900' }} p-2 flex justify-between [&>td]:flex [&>td]:justify-center [&>td]:w-auto [&>td]:h-auto [&>td]:items-center px-8">
-                                        <td class="">{{ $loop->iteration }}</td>
-                                        <td class="">
-                                            <div class="rounded overflow-hidden max-w-auto max-h-auto bg-yellow-100">
+                                    <tr class="{{ $loop->odd ? 'bg-neutral-950' : 'bg-neutral-900' }} p-2 px-8">
+                                        <td class="pl-4 py-2">{{ $loop->iteration }}</td>
+                                        <td class="p-2 flex justify-center items-center">
+                                            <div class="rounded overflow-hidden w-fit h-fit">
                                                 <img
                                                     src="/storage/{{ $image->name }}"
                                                     alt="Photo"
-                                                    class="w-20 h-10 object-contain"
+                                                    class="w-auto h-auto max-w-20 max-h-10 object-contain"
                                                 >
                                             </div>
                                         </td>
-{{--                                        <td>{{ $image->name }}</td>--}}
+                                        {{--                                        <td>{{ $image->name }}</td>--}}
                                         <td>{{ $image->owner->name }}</td>
                                         <td>{{ $image->owner->email }}</td>
                                         <td>{{ $image->created_at->format('d/m/Y') }}</td>
                                         <td>Size</td>
-                                        <td>
+                                        <td class="pr-4">
                                             <form
                                                 action="/admin/images/{{ $image->id }}"
                                                 method="post"

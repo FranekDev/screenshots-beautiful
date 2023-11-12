@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AdminImagesController;
+use App\Http\Controllers\AdminUsersController;
 use App\Http\Controllers\CreateController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
@@ -42,16 +43,14 @@ Route::get('/', [HomeController::class, 'index'])->name('/');
 Route::get('/about', [AboutController::class, 'index'])->name('/about');
 Route::get('/create', [CreateController::class, 'index'])->name('/create');
 
-// Admin
-// TODO
-// - Add Admin middleware
-//Route::get('/admin', [AdminController::class, 'index'])->middleware('admin');
-//Route::get('/admin/images', [AdminImagesController::class, 'index'])->middleware('admin');
-//Route::delete('/admin/images/{image}', [AdminImagesController::class, 'destroy']);
+// Admin;
 Route::middleware('admin')->group(function () {
     Route::get('/admin', [AdminController::class, 'index']);
+
     Route::get('/admin/images', [AdminImagesController::class, 'index']);
     Route::delete('/admin/images/{image}', [AdminImagesController::class, 'destroy']);
+
+    Route::get('/admin/users', [AdminUsersController::class, 'index']);
 });
 
 // Session
