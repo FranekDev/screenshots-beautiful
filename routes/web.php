@@ -45,8 +45,14 @@ Route::get('/create', [CreateController::class, 'index'])->name('/create');
 // Admin
 // TODO
 // - Add Admin middleware
-Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/admin/images', [AdminImagesController::class, 'index']);
+//Route::get('/admin', [AdminController::class, 'index'])->middleware('admin');
+//Route::get('/admin/images', [AdminImagesController::class, 'index'])->middleware('admin');
+//Route::delete('/admin/images/{image}', [AdminImagesController::class, 'destroy']);
+Route::middleware('admin')->group(function () {
+    Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/admin/images', [AdminImagesController::class, 'index']);
+    Route::delete('/admin/images/{image}', [AdminImagesController::class, 'destroy']);
+});
 
 // Session
 Route::get('/logout', [SessionController::class, 'destroy'])->middleware('auth');
