@@ -20,7 +20,7 @@ class AdminController extends Controller
         ])->with('success', 'You are now an admin.');
     }
 
-    private function getImagesSize()
+    private function getImagesSize(): float
     {
         $fileSystem = new Filesystem();
         $size = 0;

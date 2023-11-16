@@ -18,7 +18,8 @@ class ImageController extends Controller
 
         $image = Image::create([
             'user_id' => auth()->id(),
-            'name' => Storage::disk('public')->put('usersImages', request()->file('image'))
+            'name' => Storage::disk('public')->put('usersImages', request()->file('image')),
+            'size' => request()->file('image')->getSize()
         ]);
 
         Session::put('image', $image);
