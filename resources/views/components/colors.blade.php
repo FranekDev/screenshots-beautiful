@@ -1,4 +1,4 @@
-<div class="grid grid-cols-3 w-auto gap-3 [&>div]:cursor-pointer">
+<div class="grid grid-cols-4 md:grid-cols-3 w-full gap-3 [&>div]:cursor-pointer">
     <x-color
         class="bg-gradient-to-br from-blue-500 to-sky-300"
         value="bg-gradient-to-br from-blue-500 to-sky-300"

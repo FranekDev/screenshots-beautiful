@@ -4,12 +4,19 @@
     <main class="flex flex-col justify-between items-center">
         <x-header>
             @auth
-                <x-session.link
-                    href="/logout"
-                    class="after:content-['Log_Out'] after:bg-green-400 before:border-black after:border-black"
-                >
-                    Log Out
-                </x-session.link>
+                <div class="flex justify-center items-center gap-5">
+                    <a
+                        href="/dashboard"
+                        class="font-krona text-neutral-900 text-xs"
+                    >{{ auth()->user()->name }}</a>
+
+                    <x-session.link
+                        href="/logout"
+                        class="after:content-['Log_Out'] after:bg-green-400 before:border-black after:border-black"
+                    >
+                        Log Out
+                    </x-session.link>
+                </div>
             @else
                 <x-session.link
                     href="/register"
@@ -36,9 +43,12 @@
             <div class="w-full flex justify-around mx-5 items-center ">
                 <div class="space-y-4">
                     <h1 class="font-krona text-4xl md:text-6xl">screenshots<br>beautiful</h1>
-                    <x-button class="after:content-['Get_Started'] after:bg-black after:text-emerald-400 before:border-black after:border-black">
-                        Get Started
-                    </x-button>
+
+                    <a href="/create" class="block">
+                        <x-button class="after:content-['Get_Started'] after:bg-black after:text-emerald-400 before:border-black after:border-black">
+                            Get Started
+                        </x-button>
+                    </a>
                 </div>
 
                 <div class="border-2 border-black p-10">
